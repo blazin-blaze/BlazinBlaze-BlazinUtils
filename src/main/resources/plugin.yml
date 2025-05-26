@@ -1,0 +1,42 @@
+name: BlazinBlaze-BlazinUtils
+version: '1.0'
+main: net.blazinblaze.blazinutils.BlazinUtils
+api-version: '1.21'
+authors: [BlazinBlaze]
+description: Utilities for the Blazin Minecraft Server
+commands:
+  discordcmd:
+    description: Sends a link to the Discord Server to the player
+    usage: /<command>
+  youtubecmd:
+    description: Sends a link to the main YouTube to the player
+    usage: /<command>
+  youtube2cmd:
+    description: Sends a link to the 2nd YouTube to the player
+    usage: /<command>
+  twitchcmd:
+    description: Sends a link to Twitch to the player
+    usage: /<command>
+  mapcmd:
+    description: Sends a link to the server's BlueMap to the player
+    usage: /<command>
+  serveripcmd:
+    description: Sends the server IP to the player
+    usage: /<command>
+  infocmd:
+    description: Sends a link to the Server Home Page to the player
+    usage: /<command>
+  announcement:
+    descrption: Sends an announcement to all players
+    usage: /<command>
+    permission: blazinutils.op
+    permission-message: You are not allowed to run this command.
+  announcementchat:
+    description: Sends a chat announcement to all players
+    usage: /<command>
+    permission: blazinutils.op
+    permission-message: You are not allowed to run this command.
+permissions:
+  blazinutils.op:
+    description: Permission for op commands
+    default: op
