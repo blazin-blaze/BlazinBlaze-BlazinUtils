@@ -25,7 +25,7 @@ public class JoinLeaveListener implements Listener {
     public void onLeave(PlayerQuitEvent e) {
 
         Player player = e.getPlayer();
-        e.quitMessage(Component.text(player.displayName() + "'s flame has dwindled out.").color(TextColor.color(4862243)));
+        e.quitMessage(player.displayName().color(TextColor.color(4862243)).append(Component.text("'s flame has dwindled out.").color(TextColor.color(4862243))));
 
     }
 
@@ -50,7 +50,7 @@ public class JoinLeaveListener implements Listener {
             laterMessage.runTaskLater(BlazinUtils.getInstance(), 20L * 5);
         }
 
-        e.joinMessage(Component.text(player.displayName() + "'s flame has ignited!").color(TextColor.color(11350273)));
+        e.joinMessage(player.displayName().color(TextColor.color(11350273)).append(Component.text("'s flame has ignited!")).color(TextColor.color(11350273)));
 
     }
 

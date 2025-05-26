@@ -1,4 +1,4 @@
-name: BlazinBlaze-BlazinUtils
+name: BlazinUtils
 version: '1.0'
 main: net.blazinblaze.blazinutils.BlazinUtils
 api-version: '1.21'
