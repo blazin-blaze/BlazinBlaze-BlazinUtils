@@ -13,6 +13,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -41,7 +42,7 @@ public class AnnouncementCommand implements CommandExecutor {
                                    .color(TextColor.color(13657113))
                                    .decorate(TextDecoration.BOLD),
                            Component.text(message)
-                                   .color(TextColor.color(13185315))));
+                                   .color(TextColor.color(13185315)), Title.Times.times(Duration.ofMillis(500), Duration.ofSeconds(10), Duration.ofSeconds(1))));
                     iPlayer.playSound(iPlayer.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_CHIME, 10.0F, 1.0F);
                 }
             }else {
