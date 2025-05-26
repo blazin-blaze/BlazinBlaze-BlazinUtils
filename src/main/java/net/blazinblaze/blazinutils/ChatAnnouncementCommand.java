@@ -40,7 +40,7 @@ public class ChatAnnouncementCommand implements CommandExecutor {
                             .decorate(TextDecoration.BOLD)
                             .append(Component.text(message)
                                     .color(TextColor.color(13657113))));
-                    iPlayer.playSound(iPlayer.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_CHIME, 10.0F, 0.9F);
+                    iPlayer.playSound(iPlayer.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10.0F, 0.8F);
                 }
             }else {
                 final Component component = Component.text("Please use the following command syntax: /announcement <message>")

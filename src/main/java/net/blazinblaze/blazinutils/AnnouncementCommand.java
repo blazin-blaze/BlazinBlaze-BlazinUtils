@@ -43,7 +43,7 @@ public class AnnouncementCommand implements CommandExecutor {
                                    .decorate(TextDecoration.BOLD),
                            Component.text(message)
                                    .color(TextColor.color(13185315)), Title.Times.times(Duration.ofMillis(500), Duration.ofSeconds(10), Duration.ofSeconds(1))));
-                    iPlayer.playSound(iPlayer.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_CHIME, 10.0F, 1.0F);
+                    iPlayer.playSound(iPlayer.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10.0F, 1.0F);
                 }
             }else {
                 final Component component = Component.text("Please use the following command syntax: /announcement <message>")

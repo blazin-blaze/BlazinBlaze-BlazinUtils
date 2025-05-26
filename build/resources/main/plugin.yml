@@ -5,25 +5,25 @@ api-version: '1.21'
 authors: [BlazinBlaze]
 description: Utilities for the Blazin Minecraft Server
 commands:
-  discordcmd:
+  discord:
     description: Sends a link to the Discord Server to the player
     usage: /<command>
-  youtubecmd:
+  youtube:
     description: Sends a link to the main YouTube to the player
     usage: /<command>
-  youtube2cmd:
+  youtube2:
     description: Sends a link to the 2nd YouTube to the player
     usage: /<command>
-  twitchcmd:
+  twitch:
     description: Sends a link to Twitch to the player
     usage: /<command>
-  mapcmd:
+  servermap:
     description: Sends a link to the server's BlueMap to the player
     usage: /<command>
-  serveripcmd:
+  serverip:
     description: Sends the server IP to the player
     usage: /<command>
-  infocmd:
+  serverinfo:
     description: Sends a link to the Server Home Page to the player
     usage: /<command>
   announcement:

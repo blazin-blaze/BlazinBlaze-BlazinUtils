@@ -18,6 +18,7 @@ public final class BlazinUtils extends JavaPlugin {
         getCommand("servermap").setExecutor(new MapCommand());
         getCommand("serverip").setExecutor(new ServerIPCommand());
         getCommand("serverinfo").setExecutor(new InfoCommand());
+        getCommand("servervc").setExecutor(new ServerVCCommand());
         getCommand("announcement").setExecutor(new AnnouncementCommand());
         getCommand("announcementchat").setExecutor(new ChatAnnouncementCommand());
 
