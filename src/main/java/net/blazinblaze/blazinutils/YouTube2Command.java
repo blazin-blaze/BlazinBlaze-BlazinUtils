@@ -16,10 +16,10 @@ public class YouTube2Command implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
-            final Component component = Component.text("BlazinBlaze2")
+            final Component component = Component.text("BlazinBlaze2 - ")
                     .decorate(TextDecoration.BOLD)
                     .color(TextColor.color(9830400))
-                    .append(Component.text(" [2nd YouTube, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
+                    .append(Component.text("[2nd YouTube, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
                     .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://youtube.com/@BlazinBlaze2"));
             player.sendMessage(component);
 

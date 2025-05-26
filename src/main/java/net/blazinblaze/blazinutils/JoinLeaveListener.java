@@ -68,10 +68,10 @@ public class JoinLeaveListener implements Listener {
                 final Component component2 = Component.text("Make sure to check out the information board at spawn for rules, useful commands, and various features!").decorate(TextDecoration.BOLD)
                         .color(TextColor.color(8355711));
                 playerInstance.sendMessage(component2);
-                final Component component = Component.text("Proximity voice chat is available if you're interested!")
+                final Component component = Component.text("Proximity voice chat is available if you're interested! - ")
                         .decorate(TextDecoration.BOLD)
                         .color(TextColor.color(16777215))
-                        .append(Component.text(" Click here to install Simple Voice Chat (fabric/forge/etc)!", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
+                        .append(Component.text("Click here to install Simple Voice Chat (fabric/forge/etc)!", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
                         .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://modrinth.com/plugin/simple-voice-chat"));
                 playerInstance.sendMessage(component);
                 playerInstance.playSound(playerInstance.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10.0F, 1.0F);

@@ -16,10 +16,10 @@ public class ServerIPCommand implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
-            final Component component = Component.text("Server IP:")
+            final Component component = Component.text("Server IP - ")
                     .decorate(TextDecoration.BOLD)
                     .color(TextColor.color(4868682))
-                    .append(Component.text(" play.blazinblaze.net", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED));
+                    .append(Component.text("play.blazinblaze.net", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED));
             player.sendMessage(component);
 
         }

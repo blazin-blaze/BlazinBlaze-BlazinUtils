@@ -46,7 +46,9 @@ public class AnnouncementCommand implements CommandExecutor {
                     iPlayer.playSound(iPlayer.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_CHIME, 10.0F, 1.0F);
                 }
             }else {
-                sender.sendMessage("§c Please use the following command syntax: /announcement <message>");
+                final Component component = Component.text("Please use the following command syntax: /announcement <message>")
+                        .color(TextColor.color(13185315));
+                player.sendMessage(component);
             }
         }
 

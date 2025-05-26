@@ -11,15 +11,15 @@ public final class BlazinUtils extends JavaPlugin {
         // Plugin startup logic
         instance = this;
         getLogger().info("BlazinUtils is enabled!");
-        getCommand("discordcmd").setExecutor(new DiscordCommand());
-        getCommand("youtubecmd").setExecutor(new YouTubeCommand());
-        getCommand("youtube2cmd").setExecutor(new YouTube2Command());
-        getCommand("twitchcmd").setExecutor(new TwitchCommand());
-        getCommand("mapcmd").setExecutor(new MapCommand());
-        getCommand("serveripcmd").setExecutor(new ServerIPCommand());
-        getCommand("infocmd").setExecutor(new InfoCommand());
-        getCommand("announcement").setExecutor(new ServerIPCommand());
-        getCommand("announcementchat").setExecutor(new InfoCommand());
+        getCommand("discord").setExecutor(new DiscordCommand());
+        getCommand("youtube").setExecutor(new YouTubeCommand());
+        getCommand("youtube2").setExecutor(new YouTube2Command());
+        getCommand("twitch").setExecutor(new TwitchCommand());
+        getCommand("servermap").setExecutor(new MapCommand());
+        getCommand("serverip").setExecutor(new ServerIPCommand());
+        getCommand("serverinfo").setExecutor(new InfoCommand());
+        getCommand("announcement").setExecutor(new AnnouncementCommand());
+        getCommand("announcementchat").setExecutor(new ChatAnnouncementCommand());
 
         getServer().getPluginManager().registerEvents(new JoinLeaveListener(), this);
     }

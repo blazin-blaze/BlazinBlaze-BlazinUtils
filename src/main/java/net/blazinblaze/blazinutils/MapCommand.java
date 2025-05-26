@@ -16,10 +16,10 @@ public class MapCommand implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
-            final Component component = Component.text("Server Map")
+            final Component component = Component.text("Server Map - ")
                     .decorate(TextDecoration.BOLD)
                     .color(TextColor.color(1976316))
-                    .append(Component.text(" [BlueMap, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
+                    .append(Component.text("[map.blazinblaze.net, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
                     .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://map.blazinblaze.net"));
             player.sendMessage(component);
 

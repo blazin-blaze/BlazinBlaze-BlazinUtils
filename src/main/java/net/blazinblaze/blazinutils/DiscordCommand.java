@@ -16,10 +16,10 @@ public class DiscordCommand implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
-            final Component component = Component.text("Blazin' Inferno")
+            final Component component = Component.text("Blazin' Inferno - ")
                     .decorate(TextDecoration.BOLD)
                     .color(TextColor.color(3093169))
-                    .append(Component.text(" [discord, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
+                    .append(Component.text("[Discord, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
                     .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://discord.gg/vBDF8AMz8a"));
             player.sendMessage(component);
 

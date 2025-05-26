@@ -35,7 +35,7 @@ public class ChatAnnouncementCommand implements CommandExecutor {
                 List<Player> players = new ArrayList<>(Bukkit.getOnlinePlayers());
                 for(int i2 =0; i2 < players.size(); i2++) {
                     Player iPlayer = players.get(i2);
-                    iPlayer.sendMessage(Component.text("[Announcement!]")
+                    iPlayer.sendMessage(Component.text("[Announcement!] ")
                             .color(TextColor.color(13185315))
                             .decorate(TextDecoration.BOLD)
                             .append(Component.text(message)
@@ -43,7 +43,9 @@ public class ChatAnnouncementCommand implements CommandExecutor {
                     iPlayer.playSound(iPlayer.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_CHIME, 10.0F, 0.9F);
                 }
             }else {
-                sender.sendMessage("§c Please use the following command syntax: /announcementchat <message>");
+                final Component component = Component.text("Please use the following command syntax: /announcement <message>")
+                        .color(TextColor.color(13185315));
+                player.sendMessage(component);
             }
         }
 

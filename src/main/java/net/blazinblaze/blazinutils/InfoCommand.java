@@ -16,10 +16,10 @@ public class InfoCommand implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
-            final Component component = Component.text("Server Info")
+            final Component component = Component.text("Server Info - ")
                     .decorate(TextDecoration.BOLD)
                     .color(TextColor.color(8355711))
-                    .append(Component.text(" [Server Home Page, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
+                    .append(Component.text("[blazinblaze.net, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
                     .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://blazinblaze.net"));
             player.sendMessage(component);
 
