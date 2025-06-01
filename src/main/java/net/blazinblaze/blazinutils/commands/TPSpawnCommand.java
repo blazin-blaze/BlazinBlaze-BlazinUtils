@@ -24,7 +24,7 @@ public class TPSpawnCommand implements CommandExecutor {
                 if(instance != null) {
                     PlayerMemory memory = PlayerUtil.getPlayerMemory(plr);
                     memory.setLastLocationBeforeTP(plr.getLocation());
-                    plr.teleport(new Location(instance.getServer().getWorlds().getFirst(), 0, 80, 0));
+                    plr.teleport(new Location(instance.getServer().getWorlds().getFirst(), 0, 81, 0));
                     final Component component = Component.text("Successfully teleported to spawn!")
                             .color(TextColor.color(42496));
                     commandSender.sendMessage(component);

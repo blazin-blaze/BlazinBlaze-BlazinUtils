@@ -39,6 +39,33 @@ commands:
     usage: /<command>
     permission: blazinutils.op
     permission-message: You are not allowed to run this command.
+  purgetoggle:
+    description: Toggles a server-wide purge
+    usage: /<command>
+    permission: blazinutils.op
+    permission-message: You are not allowed to run this command.
+  purgetimed:
+    description: Starts a timed server-wide purge
+    usage: /<command>
+    permission: blazinutils.op
+    permission-message: You are not allowed to run this command.
+  playtimeboard:
+    description: Shows the top 10 highest play-time players
+    usage: /<command>
+  playtimeuser:
+    description: Shows the play-time of the specified player
+    usage: /<command>
+  tpspawn:
+    description: TP to spawn during events
+    usage: /<command>
+  tpreturn:
+    description: TP to return from events
+    usage: /<command>
+  spawneventtoggle:
+    description: Toggle spawn events
+    usage: /<command>
+    permission: blazinutils.op
+    permission-message: You are not allowed to run this command.
 permissions:
   blazinutils.op:
     description: Permission for op commands
