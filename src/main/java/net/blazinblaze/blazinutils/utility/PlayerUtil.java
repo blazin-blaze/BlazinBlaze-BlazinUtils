@@ -1,5 +1,6 @@
 package net.blazinblaze.blazinutils.utility;
 
+import net.blazinblaze.blazinutils.BlazinUtils;
 import net.blazinblaze.blazinutils.data.PlayerMemory;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -25,6 +26,6 @@ public class PlayerUtil {
     }
 
     public static String getFolderPath(Player p) {
-        return Bukkit.getPluginsFolder().getAbsolutePath() + "/player/" + p.getUniqueId();
+        return BlazinUtils.getInstance().getDataFolder().getAbsolutePath() + "/player/" + p.getUniqueId();
     }
 }
