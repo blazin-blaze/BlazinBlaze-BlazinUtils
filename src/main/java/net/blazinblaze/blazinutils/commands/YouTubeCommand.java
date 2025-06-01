@@ -1,4 +1,4 @@
-package net.blazinblaze.blazinutils;
+package net.blazinblaze.blazinutils.commands;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;

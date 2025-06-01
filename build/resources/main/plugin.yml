@@ -26,6 +26,9 @@ commands:
   serverinfo:
     description: Sends a link to the Server Home Page to the player
     usage: /<command>
+  servervc:
+    description: Sends a link to download Simple Voice Chat
+    usage: /<command>
   announcement:
     descrption: Sends an announcement to all players
     usage: /<command>

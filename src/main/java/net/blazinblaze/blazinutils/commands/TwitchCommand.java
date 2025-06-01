@@ -1,4 +1,4 @@
-package net.blazinblaze.blazinutils;
+package net.blazinblaze.blazinutils.commands;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
@@ -10,17 +10,17 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class DiscordCommand implements CommandExecutor {
+public class TwitchCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
-            final Component component = Component.text("Blazin' Inferno - ")
+            final Component component = Component.text("blazinblaze_ - ")
                     .decorate(TextDecoration.BOLD)
-                    .color(TextColor.color(3093169))
-                    .append(Component.text("[Discord, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
-                    .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://discord.gg/vBDF8AMz8a"));
+                    .color(TextColor.color(9840579))
+                    .append(Component.text("[Twitch, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
+                    .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://twitch.tv/blazinblaze_"));
             player.sendMessage(component);
 
         }

@@ -1,4 +1,4 @@
-package net.blazinblaze.blazinutils;
+package net.blazinblaze.blazinutils.commands;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
@@ -10,17 +10,17 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class InfoCommand implements CommandExecutor {
+public class YouTube2Command implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
-            final Component component = Component.text("Server Info - ")
+            final Component component = Component.text("BlazinBlaze2 - ")
                     .decorate(TextDecoration.BOLD)
-                    .color(TextColor.color(8355711))
-                    .append(Component.text("[blazinblaze.net, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
-                    .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://blazinblaze.net"));
+                    .color(TextColor.color(9830400))
+                    .append(Component.text("[2nd YouTube, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
+                    .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://youtube.com/@BlazinBlaze2"));
             player.sendMessage(component);
 
         }

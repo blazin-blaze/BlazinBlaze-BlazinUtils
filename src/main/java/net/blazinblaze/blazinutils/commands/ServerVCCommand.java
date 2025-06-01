@@ -1,4 +1,4 @@
-package net.blazinblaze.blazinutils;
+package net.blazinblaze.blazinutils.commands;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
@@ -10,17 +10,17 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class TwitchCommand implements CommandExecutor {
+public class ServerVCCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
-            final Component component = Component.text("blazinblaze_ - ")
+            final Component component = Component.text("Proximity voice chat is available if you're interested! - ")
                     .decorate(TextDecoration.BOLD)
-                    .color(TextColor.color(9840579))
-                    .append(Component.text("[Twitch, click here!]", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
-                    .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://twitch.tv/blazinblaze_"));
+                    .color(TextColor.color(16777215))
+                    .append(Component.text("Click here to install Simple Voice Chat (fabric/forge/etc)!", NamedTextColor.AQUA).decorate(TextDecoration.ITALIC).decorate(TextDecoration.UNDERLINED))
+                    .clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL,"https://modrinth.com/plugin/simple-voice-chat"));
             player.sendMessage(component);
 
         }

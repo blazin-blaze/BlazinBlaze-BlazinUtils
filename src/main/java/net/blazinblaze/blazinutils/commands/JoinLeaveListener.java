@@ -1,23 +1,27 @@
-package net.blazinblaze.blazinutils;
+package net.blazinblaze.blazinutils.commands;
 
+import net.blazinblaze.blazinutils.BlazinUtils;
+import net.blazinblaze.blazinutils.data.PlayerMemory;
+import net.blazinblaze.blazinutils.utility.PlayerUtil;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
-import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Sound;
+import org.bukkit.World;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.w3c.dom.Text;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Vector;
+import java.io.File;
+import java.io.IOException;
 
 public class JoinLeaveListener implements Listener {
 
@@ -25,6 +29,17 @@ public class JoinLeaveListener implements Listener {
     public void onLeave(PlayerQuitEvent e) {
 
         Player player = e.getPlayer();
+
+        PlayerMemory memory = PlayerUtil.getPlayerMemory(player);
+        File f = new File(PlayerUtil.getFolderPath(player) + "/general.yml");
+        FileConfiguration cfg = YamlConfiguration.loadConfiguration(f);
+        cfg.set("data.team", memory.getTeam());
+        cfg.set("data.secondsPlayed", memory.getSecondsPlayed());
+        cfg.set("data.locationTP", memory.getLastLocationBeforeTP());
+
+        try{cfg.save(f);} catch (IOException eo){eo.printStackTrace();}
+        PlayerUtil.setPlayerMemory(player, null);
+
         e.quitMessage(player.displayName().color(TextColor.color(4862243)).append(Component.text("'s flame has dwindled out.").color(TextColor.color(4862243))));
 
     }
@@ -33,6 +48,25 @@ public class JoinLeaveListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
 
         Player player = e.getPlayer();
+
+        PlayerMemory memory = new PlayerMemory();
+        File f = new File(PlayerUtil.getFolderPath(player) + "/general.yml");
+
+        if(f.exists()) {
+            FileConfiguration cfg = YamlConfiguration.loadConfiguration(f);
+            memory.setTeam(cfg.getString("data.team"));
+            memory.setSecondsPlayed(cfg.getInt("data.secondsPlayed"));
+            memory.setLastLocationBeforeTP(cfg.getLocation("data.locationTP"));
+        }else {
+            memory.setTeam("none");
+            memory.setSecondsPlayed(0);
+            BlazinUtils instance = BlazinUtils.getInstance();
+            if(instance != null) {
+                memory.setLastLocationBeforeTP(new Location(instance.getServer().getWorlds().getFirst(), 0, 0, 0));
+            }
+        }
+
+        PlayerUtil.setPlayerMemory(player, memory);
 
         if(player.hasPlayedBefore()) {
             final Component component = Component.text("Welcome back!").decorate(TextDecoration.BOLD)
